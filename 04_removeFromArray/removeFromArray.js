@@ -1,12 +1,5 @@
-const removeFromArray = function(nums, ...args) {
-    return nums.filter((num) =>{
-        for(const arg of args){
-            if(arg === num){
-                return false;
-            } 
-        }
-        return true;
-    });
+const removeFromArray = function(array, ...args) {
+    return array.filter((item)=> !(args.includes(item)));
 };
 
 //console.log(removeFromArray([1, 2, 3, 4], 3, 2))
