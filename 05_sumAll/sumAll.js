@@ -3,26 +3,20 @@ const sumAll = function(num1, num2) {
     let low;
     let high;
 
-    if(Number.isInteger(num1) && Number.isInteger(num2)){
-        if(Math.sign(num1) === 1 && Math.sign(num2) === 1){
-            if(num1 !== num2){
-                if(num1 < num2){
-                    low = num1;
-                    high = num2;
-                }else{
-                    low = num2;
-                    high = num1;
-                }
-            }
-        }else{
-            return 'ERROR';
-        }
+    if(!Number.isInteger(num1) || !Number.isInteger(num2)) return 'ERROR';
+    if(num1 < 0 || num2 < 0) return 'ERROR';
+    if(num1 === num2) return 'ERROR';
+    
+    if(num1 < num2){
+        low = num1;
+        high = num2;
     }else{
-        return 'ERROR';
+        low = num2;
+        high = num1;
     }
 
-    for(; low <= high; low++){
-        sum += low;
+    for(let i = low; i <= high; i++){
+        sum += i;
     }
     return sum;
 };
