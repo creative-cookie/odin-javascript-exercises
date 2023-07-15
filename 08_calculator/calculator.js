@@ -6,12 +6,12 @@ const subtract = function(a,b) {
   return a-b;
 };
 
-const sum = function([...args]) {
-	return args.reduce((a,b) => a+b, 0);
+const sum = function(arr) {
+	return arr.reduce((a,b) => a+b, 0);
 };
 
-const multiply = function([...args]) {
-  return args.reduce((a,b) => a*b);
+const multiply = function(arr) {
+  return arr.reduce((a,b) => a*b);
 };
 
 const power = function(a,b) {
